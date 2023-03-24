@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.example.sampleviewmodel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(mainViewModel.count)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> mainViewModel.minus()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> mainViewModel.plus()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/plus_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+1"
+            android:elevation="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_plus"
+            app:layout_constraintEnd_toEndOf="@+id/fab_plus"
+            app:layout_constraintStart_toStartOf="@+id/fab_plus"
+            app:layout_constraintTop_toTopOf="@+id/fab_plus" />
+
+        <TextView
+            android:id="@+id/minus_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-1"
+            android:elevation="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/fab_minus"
+            app:layout_constraintEnd_toEndOf="@+id/fab_minus"
+            app:layout_constraintStart_toStartOf="@+id/fab_minus"
+            app:layout_constraintTop_toTopOf="@+id/fab_minus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
